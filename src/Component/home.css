@@ -1,0 +1,55 @@
+ .cover-image img{
+    width :1300px ;
+    height :500px;
+  
+ }
+ .cover-image{
+    padding: 3.5rem;
+   
+ }
+
+ .landing-container {
+   position: relative;
+   background-color: rgb(196 207 217);
+}
+ .text-area{
+    position: absolute;
+    top: 132px;
+    left: 280px;
+    color: white;
+ }
+ .text-area p {
+   font-size: 30px;
+ }
+
+ .text-area button {
+   font-size: 20px;
+   margin: 1rem;
+   cursor: pointer;
+   border-radius: 7px;
+   background-color: rgb(54, 116, 170);
+   color: white;
+ }
+
+ .text-area button:hover {
+   background-color: rgb(20, 51, 78);
+ }
+
+ .category-box{
+   display: flex;
+   justify-content: center;
+  }
+
+ .box{
+   width: 200px;
+   height: 200px;
+   border: 2px solid black;
+   margin: 20px;
+   border-radius: 50%;
+   cursor: pointer
+ }
+
+ .box p {
+  font-size: 0.75rem;
+  padding: 8px;
+ }

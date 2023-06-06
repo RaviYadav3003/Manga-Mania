@@ -1,0 +1,33 @@
+.cart-conatiner{
+    width: 445px;
+    height: 244px;
+    padding: 1rem;
+    margin: 3rem ;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+}
+.cart-conatiner img {
+    width: 220px;
+    height: 220px;
+}
+
+.cart-heading h3{
+    margin: 0px; 
+    
+}
+.price-detail span{
+    padding-right: 7px;
+}
+.originalprice{
+    text-decoration: line-through;
+    color: #c2c2c2;
+}
+.discount{
+    color: darkgreen;
+}
+
+
+

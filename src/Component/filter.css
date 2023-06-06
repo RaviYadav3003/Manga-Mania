@@ -1,0 +1,28 @@
+ .filter-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    
+}
+
+.filter-header span {
+    margin: 23px;
+    cursor: pointer;
+}
+
+.filter-price-num span{
+    margin: 2px;
+}
+
+
+.filter-container{
+    display: flex;
+    height: 100%;
+    width: 222px;
+    flex-direction: column;
+    border-right:2px solid black ;
+
+    
+}
+
+

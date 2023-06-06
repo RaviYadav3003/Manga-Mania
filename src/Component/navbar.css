@@ -1,0 +1,54 @@
+    *{
+        text-decoration: none;
+    }
+    
+    a{
+        color: white;
+    }
+
+    .navbar-container{
+        display: flex;
+       flex-direction: row;
+       justify-content: space-around;
+        flex-grow: 10;
+        padding: 20px;
+        background-color: rgb(54, 116, 170);
+        position: sticky;
+        top : 0px;
+        gap: 2rem;
+        z-index: 1;
+    }
+
+    .nav-name {
+        font-weight: 600;
+        font-size: larger;
+        color: aqua;
+    }
+
+    .nav-search input {
+        margin: 0;
+    width: 378px;
+    border: none;
+    outline: none;    
+    }
+
+    .nav-search {
+        border: 1px solid black;
+        align-items: center;
+        display: flex;
+        border-radius: 6px;
+        background-color: white;
+    }
+
+    .nav-search i {
+        font-size: 15   px;
+    }
+
+  input[ type = "text" i ] {
+        padding: 1px 2px;
+    }
+
+    .header-profile {
+        padding-left: 1rem;
+    }
+    
