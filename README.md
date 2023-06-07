@@ -1,3 +1,50 @@
-## E-Commerce Backend
 
-This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
+# Manga Mania
+
+[link](https://mangaa-maniaa.netlify.app/wishlist)
+
+
+## How to install and run locally ?
+```
+$ git clone https://github.com/RaviYadav3003/Manga-Mania.git
+$ cd my-app
+$ npm install
+$ npm start
+```
+
+
+## **Features-**
+
+- Home Page
+- Product Listing Page
+- Single Product Page
+- Filters by:
+  - Price
+  - Category
+  - Sizes
+  - Ratings
+- Search
+- Wishlist Management
+- Cart Management
+- Search
+- Loading & Alerts
+- Authentication:
+
+
+  - Login
+  - Logout
+
+- Checkout
+- Toasts
+
+## **Built With-**
+
+- React Js
+- React Context API + useReducer
+- React Router v6
+- Vanilla CSS
+- MockBee for backend
+
+## ** DEMO VIDEO-**
+
+https://www.loom.com/share/59e0bbd6610a48aa89942ab808bc0521
