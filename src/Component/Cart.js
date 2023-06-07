@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import { DataContext } from '../Context/DataContext'
 import "./cart.css"
+import { Checkout } from './Checkout'
 
 export default function Cart() {
   const { state, handleRemoveCart, handleAddToWishlist } = useContext(DataContext)
   return (
-    <div className='cart-container'>
+    <div className='cart' >
       {state.cart.length === 0 && <h1>Your cart is empty! , why don't you buy something</h1>}
-      <div>
+      <div className='cart-container'>
         {state.cart?.map((item) => {
           const { id, title, author, price, img, originalPrice, discount } = item
           return <>
@@ -37,8 +38,13 @@ export default function Cart() {
                 </div>
               </div>
             </div>
+            <div>
+            </div>
           </>
         })}
+      </div>
+      <div className='checkout-container'>
+        <Checkout />
       </div>
     </div>
   )
