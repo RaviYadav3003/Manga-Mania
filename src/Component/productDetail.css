@@ -75,3 +75,18 @@
 .delivery span:nth-child(2) {
     padding-left:15px;   
   }
+
+  .add-button button{
+    width: 200px;
+    background-color:rgb(54, 116, 170);
+    border: 0.5px solid blue;
+    border-radius: 4px ;
+    cursor: pointer; 
+}
+  .wishlists-button {
+    width: 200px;
+    background-color:rgb(54, 116, 170);
+    border: 0.5px solid blue;
+    border-radius: 4px ;
+    cursor: pointer; 
+}

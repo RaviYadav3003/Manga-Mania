@@ -43,13 +43,18 @@
  .box{
    width: 200px;
    height: 200px;
-   border: 2px solid black;
+   /* border: 2px solid black; */
    margin: 20px;
    border-radius: 50%;
+   box-shadow: 4px 4px 4px 4px grey ;
    cursor: pointer
  }
 
  .box p {
   font-size: 0.75rem;
   padding: 8px;
+ }
+
+ .box:hover{  
+  background-color: darkgray;
  }
