@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useReducer, useState, } from 'react'
 import { dataReducer, initialState } from '../Reducers/DataReducer'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 export const DataContext = createContext()
 export const DataProvider = ({ children }) => {
@@ -40,21 +41,22 @@ export const DataProvider = ({ children }) => {
   }, [])
 
   const handleAddToCart = (product) => {
-    // console.log(product);
     dispatch({ type: "ADD_TO_CART", payload: product })
+    toast("Added to cart")
   };
   const handleAddToWishlist = (product) => {
-    // console.log(product);
     dispatch({ type: "ADD_TO_WISHLIST", payload: product })
+    toast("added to wishlist")
   };
 
   const handleRemoveCart = (product) => {
-    // console.log(product);
     dispatch({ type: "REMOVE_FROM_CART", payload: product })
+    toast("removed from cart")
   };
 
   const removeFromWhislist = (product) => {
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: product })
+    toast("remove from wishlist")
   }
 
   const handleTestLogin = () => {
@@ -70,6 +72,7 @@ export const DataProvider = ({ children }) => {
       <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist, isLoggedIn, setIsLoggedIn, handleTestLogin, emailData, passwordData }}>
         {children}
       </DataContext.Provider>
+
     </div>
   )
 }

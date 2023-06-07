@@ -3,8 +3,8 @@ import { DataContext } from "../index"
 import "./product.css"
 import { NavLink, useNavigate } from "react-router-dom"
 import { Filter } from "./Filter"
-
-
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Product = () => {
    const { state: { products, filters, cart, wishlist }, handleAddToCart, handleAddToWishlist } = useContext(DataContext)
@@ -39,8 +39,6 @@ export const Product = () => {
 
       return filteredData
    }
-
-
    return <>
       <div className="product">
          <div className="filter-container">
@@ -84,5 +82,6 @@ export const Product = () => {
             })}
          </div>
       </div>
+      <ToastContainer />
    </>
 }

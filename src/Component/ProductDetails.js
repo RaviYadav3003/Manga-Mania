@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { DataContext } from '../Context/DataContext'
 import "./productDetail.css"
+import { ToastContainer } from 'react-toastify'
 
 export const ProductDetail = () => {
     const { state: { products, cart, wishlist }, handleAddToCart, handleAddToWishlist } = useContext(DataContext)
@@ -64,6 +65,7 @@ export const ProductDetail = () => {
                         ) : <button className="wishlists-button" onClick={() => handleAddToWishlist(productDetail)}>Add to wishlist</button>}
                     </div>
                 </div>
+                <ToastContainer />
             </div>}
         </>
     )

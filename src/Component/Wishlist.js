@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { DataContext } from '../Context/DataContext'
 import "./wishlist.css"
 import { NavLink } from 'react-router-dom'
+import { ToastContainer, } from 'react-toastify'
 export default function Wishlist() {
   const { state: { wishlist, cart }, handleAddToCart, removeFromWhislist } = useContext(DataContext)
   return (
@@ -38,6 +39,7 @@ export default function Wishlist() {
               </div>
             </div>
           </div>
+          <ToastContainer />
         </>
       })}</div>
     </>
