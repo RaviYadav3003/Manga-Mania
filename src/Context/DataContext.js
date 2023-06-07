@@ -1,11 +1,16 @@
-import React, { createContext, useEffect, useReducer, } from 'react'
+import React, { createContext, useEffect, useReducer, useState, } from 'react'
 import { dataReducer, initialState } from '../Reducers/DataReducer'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const DataContext = createContext()
 export const DataProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [emailData, setEmailData] = useState()
+  const [passwordData, setPasswordData] = useState()
 
-
+  const navigate = useNavigate()
+  const location = useLocation()
   const getData = async () => {
     try {
       const response = await fetch("/api/products")
@@ -34,7 +39,6 @@ export const DataProvider = ({ children }) => {
     categoriesData();
   }, [])
 
-  console.log(state);
   const handleAddToCart = (product) => {
     // console.log(product);
     dispatch({ type: "ADD_TO_CART", payload: product })
@@ -52,9 +56,18 @@ export const DataProvider = ({ children }) => {
   const removeFromWhislist = (product) => {
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: product })
   }
+
+  const handleTestLogin = () => {
+    const emailDummy = "TestUser@123";
+    const passDummy = "123456";
+    setEmailData(emailDummy);
+    setPasswordData(passDummy);
+    setIsLoggedIn(!isLoggedIn);
+    navigate(location?.state?.from?.pathname);
+  };
   return (
     <div>
-      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist }}>
+      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist, isLoggedIn, setIsLoggedIn, handleTestLogin, emailData, passwordData }}>
         {children}
       </DataContext.Provider>
     </div>
