@@ -51,6 +51,7 @@ export const Product = () => {
                const { id, title, author, price, img, originalPrice, discount } = product
                return <div key={id} className="product-container"  >
                   <img src={img} alt="Books will render" onClick={() => navigate(`/product/${id}`)} style={{ cursor: "pointer" }} />
+
                   <div>
                      {wishlist?.some((data) => data.id === id) ? (
                         <span className="wishlist-button"

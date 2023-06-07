@@ -4,7 +4,7 @@ import { DataContext } from '../Context/DataContext'
 import "./productDetail.css"
 
 export const ProductDetail = () => {
-    const { state: { products, cart }, handleAddToCart } = useContext(DataContext)
+    const { state: { products, cart, wishlist }, handleAddToCart, handleAddToWishlist } = useContext(DataContext)
     const { productId } = useParams()
 
     const getProductDetail = (productId, products) => {
@@ -57,6 +57,11 @@ export const ProductDetail = () => {
                         ) : <button onClick={() => handleAddToCart(productDetail)}>
                             add to cart
                         </button>}
+                    </div>
+                    <div >
+                        {wishlist?.some((data) => data.id === productDetail.id) ? (
+                            <button className="wishlists-button" style={{ backgroundColor: "white" }} onClick={() => handleAddToWishlist(productDetail)}>Added to wishlist</button>
+                        ) : <button className="wishlists-button" onClick={() => handleAddToWishlist(productDetail)}>Add to wishlist</button>}
                     </div>
                 </div>
             </div>}
