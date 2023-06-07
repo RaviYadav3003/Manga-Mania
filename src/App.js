@@ -8,6 +8,7 @@ import { Login } from "./Component/Login";
 import { Navbar } from "./Component/Navbar";
 import { ProductDetail } from "./Component/ProductDetails";
 import Home from "./Component/Home";
+import { RequiresAuth } from "./Component/Auth/RequiresAuth";
 
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/product" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<RequiresAuth ><Cart /></RequiresAuth>} />
+        <Route path="/wishlist" element={<RequiresAuth><Wishlist /></RequiresAuth>} />
         <Route path="/product/:productId" element={<ProductDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/mockman" element={<Mockman />} />
