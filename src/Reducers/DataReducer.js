@@ -39,6 +39,10 @@ export const dataReducer = (state, action) => {
             return {
                 ...state, cart: state.cart.includes(action.payload) ? state.cart.filter((item) => item !== action.payload) : [...state.cart, action.payload],
             }
+        case "REMOVE_FROM_WISHLIST":
+            return {
+                ...state, wishlist: state.wishlist.includes(action.payload) ? state.wishlist.filter((item) => item !== action.payload) : [...state.wishlist, action.payload],
+            }
         case "ADD_TO_CART":
             return {
                 ...state, cart: [...state.cart, action.payload],

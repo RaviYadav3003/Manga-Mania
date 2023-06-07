@@ -49,9 +49,12 @@ export const DataProvider = ({ children }) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: product })
   };
 
+  const removeFromWhislist = (product) => {
+    dispatch({ type: "REMOVE_FROM_WISHLIST", payload: product })
+  }
   return (
     <div>
-      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart }}>
+      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist }}>
         {children}
       </DataContext.Provider>
     </div>
