@@ -29,5 +29,20 @@
     color: darkgreen;
 }
 
+.wishlist-button{ 
+    color: grey;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    padding-left: 185px;
+    margin-top: -188px;
+    margin: 5px;
+}
+
+.remove-button button{
+    cursor: pointer;
+    background-color: rgb(193, 124, 124);
+
+}
 
 

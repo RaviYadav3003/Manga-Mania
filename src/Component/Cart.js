@@ -3,9 +3,10 @@ import { DataContext } from '../Context/DataContext'
 import "./cart.css"
 
 export default function Cart() {
-  const { state, handleRemoveCart } = useContext(DataContext)
+  const { state, handleRemoveCart, handleAddToWishlist } = useContext(DataContext)
   return (
     <div className='cart-container'>
+      {state.cart.length === 0 && <h1>Your cart is empty! , why don't you buy something</h1>}
       <div>
         {state.cart?.map((item) => {
           const { id, title, author, price, img, originalPrice, discount } = item
@@ -14,6 +15,12 @@ export default function Cart() {
               <div>
                 {<img src={img} alt="productImage" />}
               </div>
+              <div className='wishlist-block'>
+                {state.wishlist?.some((data) => data.id === id) ? (
+                  <span className="wishlist-button"
+                    onClick={() => handleAddToWishlist(item)}> <i class="fa fa-heart" style={{ color: "red" }}></i></span>
+                ) : <span className="wishlist-button"
+                  onClick={() => handleAddToWishlist(item)}><i className="fa fa-heart" aria-hidden="true"></i></span>}</div>
               <div className='detail-block'>
                 <div className='cart-heading'>
                   <h3>{title}</h3>
@@ -25,7 +32,6 @@ export default function Cart() {
                   <span className='discount'>{discount}%OFF</span>
                 </div>
                 <hr />
-
                 <div className="remove-button" >
                   <button onClick={() => handleRemoveCart(item)}>Remove </button>
                 </div>
