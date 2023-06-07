@@ -4,7 +4,7 @@ import "./navbar.css"
 import { DataContext } from "../Context/DataContext"
 
 export const Navbar = () => {
-    const { state: { product, cart, wishlist }, dispatch } = useContext(DataContext)
+    const { state: { cart, wishlist }, dispatch } = useContext(DataContext)
     const navigate = useNavigate()
 
     const handleProductSearch = (e) => {
@@ -22,10 +22,9 @@ export const Navbar = () => {
             </div>
             <div className="header-profile">
                 <nav>
-                    <NavLink to="/cart"><i class="material-symbols-outlined">shopping_cart</i></NavLink>
-                    <NavLink to="/wishlist"> <i class="material-symbols-outlined">favorite</i>
-                        <NavLink to="/login"> Login</NavLink>
-                    </NavLink>
+                    <NavLink to="/cart"><i class="material-symbols-outlined">shopping_cart</i><span>{cart.length === 0 ? "" : cart.length}</span></NavLink>
+                    <NavLink to="/wishlist"> <i class="material-symbols-outlined">favorite</i><span>{wishlist.length === 0 ? "" : wishlist.length}</span></NavLink>
+                    <NavLink to="/login"> Login</NavLink>
                 </nav>
             </div>
         </div>
