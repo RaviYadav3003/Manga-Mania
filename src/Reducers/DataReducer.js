@@ -29,8 +29,6 @@ export const dataReducer = (state, action) => {
             return {
                 ...state, filters: { ...state.filters, searchValue: action.payload }
             }
-
-
         case "ADD_TO_WISHLIST":
             return {
                 ...state, wishlist: state.wishlist.includes(action.payload) ? state.wishlist.filter((item) => item !== action.payload) : [...state.wishlist, action.payload],
