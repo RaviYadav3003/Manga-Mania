@@ -33,7 +33,7 @@ export default function Wishlist() {
                   add to cart
                 </button>}
               </div>
-              <div>
+              <div className="remove-button">
                 <button onClick={() => removeFromWhislist(item)}>Remove</button>
               </div>
             </div>
