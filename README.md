@@ -45,6 +45,3 @@ $ npm start
 - Vanilla CSS
 - MockBee for backend
 
-## ** DEMO VIDEO-**
-
-https://www.loom.com/share/59e0bbd6610a48aa89942ab808bc0521
