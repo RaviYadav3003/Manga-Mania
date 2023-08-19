@@ -10,6 +10,7 @@ import { ProductDetail } from "./Component/ProductDetails";
 import Home from "./Component/Home";
 import { RequiresAuth } from "./Component/Auth/RequiresAuth";
 import { Error } from "./Component/Error";
+import { SignUp } from "./Component/SignUp";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/wishlist" element={<RequiresAuth><Wishlist /></RequiresAuth>} />
         <Route path="/product/:productId" element={<ProductDetail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/*" element={<Error />} />
         <Route path="/mockman" element={<Mockman />} />
       </Routes>

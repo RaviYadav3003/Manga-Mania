@@ -33,8 +33,8 @@
     ;
 }
 
-.inputCss {
-    width: 84%;
+.input-Css {
+    width: 87%;
     padding: 3%;
     border: 1px solid #d4d5d9;
     margin-bottom: 3%;
@@ -65,7 +65,3 @@
     cursor: pointer;
 }
 
-.guestLogin{
-    margin-bottom: 2%;
-    cursor: pointer;
-}

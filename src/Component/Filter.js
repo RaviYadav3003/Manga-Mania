@@ -27,7 +27,7 @@ export const Filter = () => {
             <div className='filter-container'>
                 <div className="filter-header">
                     <h4>Filter</h4>
-                    <span onClick={() => dispatch({ type: "CLEAR_FILTER_ALL" })}>clear</span>
+                    <button onClick={() => dispatch({ type: "CLEAR_FILTER_ALL" })}>clear</button>
                 </div>
                 <div className="filter-range">
                     <h4>price</h4>
@@ -46,7 +46,7 @@ export const Filter = () => {
                     <h4>Category</h4>
                     <div>
                         {state?.categories?.map(({ id, categoryName }) => {
-                            return <div>
+                            return <div className='categorys'>
                                 <label htmlFor={id}>
                                     <input type='checkbox' id={id} onChange={() => dispatch({ type: "FILTER_BY_CATEGORIES", payload: categoryName })} checked={selectedCategories.includes(categoryName)} />
                                     <span>{categoryName}</span>
@@ -54,29 +54,30 @@ export const Filter = () => {
                             </div>
                         })}
                     </div>
+                </div>
 
-                    <div className="filter-rating">
-                        <h4>Rating</h4>
-                        <div>
-                            {[1, 2, 3, 4, 5].map((num) => {
-                                return <label key={num}>
-                                    <input type="radio" name="rating" value={num} onChange={() => handleStarRating(num)} checked={rating === num} /> <span>{num} Star & above</span>
-                                </label>
-                            })}
-
-                        </div>
-                    </div>
-
+                <div className="filter-rating">
+                    <h4>Rating</h4>
                     <div>
-                        <h4>Sort by</h4>
-                        <div>
-                            <label htmlFor="price-low">
-                                <input type="radio" id="price-low" name="short" onChange={() => { dispatch({ type: "SORT_BY_PRICE", payload: "LOW-TO-HIGH" }) }} checked={sort === "LOW-TO-HIGH"} /> <span>Price - Low to High</span>
+                        {[1, 2, 3, 4, 5].map((num) => {
+                            return <div><label key={num}>
+                                <input type="radio" name="rating" value={num} onChange={() => handleStarRating(num)} checked={rating === num} /> <span>{num} Star & above</span>
                             </label>
-                            <label htmlFor="price-high">
-                                <input type="radio" id="price-high" name="short" onChange={() => { dispatch({ type: "SORT_BY_PRICE", payload: "HIGH-TO-LOW" }) }} checked={sort === "HIGH-TO-LOW"} /> <span>Price - High to Low</span>
-                            </label>
-                        </div>
+                            </div>
+                        })}
+
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Sort by</h4>
+                    <div className='short-by'>
+                        <label htmlFor="price-low">
+                            <input type="radio" id="price-low" name="short" onChange={() => { dispatch({ type: "SORT_BY_PRICE", payload: "LOW-TO-HIGH" }) }} checked={sort === "LOW-TO-HIGH"} /> <span>Price - Low to High</span>
+                        </label>
+                        <label htmlFor="price-high">
+                            <input type="radio" id="price-high" name="short" onChange={() => { dispatch({ type: "SORT_BY_PRICE", payload: "HIGH-TO-LOW" }) }} checked={sort === "HIGH-TO-LOW"} /> <span>Price - High to Low</span>
+                        </label>
                     </div>
                 </div>
             </div>

@@ -44,7 +44,7 @@
         font-size: 15   px;
     }
 
-  input[ type = "text" i ] {
+    .inputSearch {
         padding: 1px 2px;
     }
 

@@ -5,7 +5,7 @@ import { Checkout } from './Checkout'
 import { ToastContainer } from 'react-toastify'
 
 export default function Cart() {
-  const { state, handleRemoveCart, handleAddToWishlist } = useContext(DataContext)
+  const { state, handleRemoveCart, handleAddToWishlist, removeFromWhislist } = useContext(DataContext)
   return (<>
     {state.cart.length === 0 ? <h1>Your cart is empty! , why don't you buy something</h1> :
       <div className='cart' >
@@ -20,7 +20,7 @@ export default function Cart() {
                 <div className='wishlist-block'>
                   {state.wishlist?.some((data) => data.id === id) ? (
                     <span className="wishlist-button"
-                      onClick={() => handleAddToWishlist(item)}> <i class="fa fa-heart" style={{ color: "red" }}></i></span>
+                      onClick={() => removeFromWhislist(item)}> <i class="fa fa-heart" style={{ color: "red" }}></i></span>
                   ) : <span className="wishlist-button"
                     onClick={() => handleAddToWishlist(item)}><i className="fa fa-heart" aria-hidden="true"></i></span>}</div>
                 <div className='detail-block'>

@@ -7,6 +7,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom"
 import { DataProvider, DataContext } from "./Context/DataContext";
+import AuthProvider from "./Context/AuthContext";
 
 export { DataContext };
 // Call make Server
@@ -19,7 +20,9 @@ root.render(
   <StrictMode>
     <Router>
       <DataProvider>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </DataProvider>
     </Router>
   </StrictMode>,

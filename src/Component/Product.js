@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Product = () => {
-   const { state: { products, filters, cart, wishlist }, handleAddToCart, handleAddToWishlist } = useContext(DataContext)
+   const { state: { products, filters, cart, wishlist }, handleAddToCart, handleAddToWishlist, removeFromWhislist } = useContext(DataContext)
 
    const navigate = useNavigate()
    const {
@@ -52,7 +52,7 @@ export const Product = () => {
                   <div>
                      {wishlist?.some((data) => data.id === id) ? (
                         <span className="wishlist-button"
-                           onClick={() => handleAddToWishlist(product)}> <i class="fa fa-heart" style={{ color: "red" }}></i></span>
+                           onClick={() => removeFromWhislist(product)}> <i class="fa fa-heart" style={{ color: "red" }}></i></span>
                      ) : <span className="wishlist-button"
                         onClick={() => handleAddToWishlist(product)}><i className="fa fa-heart" aria-hidden="true"></i></span>}
                   </div>

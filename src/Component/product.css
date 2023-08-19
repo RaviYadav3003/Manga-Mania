@@ -5,13 +5,13 @@
     height: 100%;
 }
 
-
 .product-listing{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    
+    margin-left: 231px;
+    position: relative;
 }
 .product-container{
     width: 12rem;

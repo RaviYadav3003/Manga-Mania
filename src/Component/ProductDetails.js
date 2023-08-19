@@ -5,7 +5,7 @@ import "./productDetail.css"
 import { ToastContainer } from 'react-toastify'
 
 export const ProductDetail = () => {
-    const { state: { products, cart, wishlist }, handleAddToCart, handleAddToWishlist } = useContext(DataContext)
+    const { state: { products, cart, wishlist }, handleAddToCart, handleAddToWishlist, removeFromWhislist } = useContext(DataContext)
     const { productId } = useParams()
 
     const getProductDetail = (productId, products) => {
@@ -24,7 +24,9 @@ export const ProductDetail = () => {
                         <h3>{productDetail?.title}</h3>
                     </div>
                     <div className='rating'>
-                        <span>{productDetail?.rating}</span>
+                        <span>{productDetail?.rating} </span><span class="material-symbols-outlined">
+                            star
+                        </span>
                     </div>
                     <div className='price-detail'>
                         <span className='price'>₹{productDetail?.price}</span>
@@ -61,7 +63,7 @@ export const ProductDetail = () => {
                     </div>
                     <div >
                         {wishlist?.some((data) => data.id === productDetail.id) ? (
-                            <button className="wishlists-button" style={{ backgroundColor: "white" }} onClick={() => handleAddToWishlist(productDetail)}>Added to wishlist</button>
+                            <button className="wishlists-button" style={{ backgroundColor: "white" }} onClick={() => removeFromWhislist(productDetail)}>Added to wishlist</button>
                         ) : <button className="wishlists-button" onClick={() => handleAddToWishlist(productDetail)}>Add to wishlist</button>}
                     </div>
                 </div>
