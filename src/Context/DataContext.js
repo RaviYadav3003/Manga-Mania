@@ -53,10 +53,16 @@ export const DataProvider = ({ children }) => {
     toast("remove from wishlist")
   }
 
+  const increaseQuantity = (id) => {
+    dispatch({ type: "INCREASE_QUANTITY", payload: id })
+  }
+  const decreaseQuantity = (id) => {
+    dispatch({ type: "DECREASE_QUANTITY", payload: id })
 
+  }
   return (
     <div>
-      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist, setIsLoggedIn, isLoggedIn, }}>
+      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist, setIsLoggedIn, isLoggedIn, decreaseQuantity, increaseQuantity }}>
         {children}
       </DataContext.Provider>
 

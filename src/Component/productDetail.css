@@ -1,23 +1,24 @@
 .productDetail-conatiner{
     width: 445px;
-    height: 336px;
-
+    height: 316px;
     padding: 1rem;
-    margin: 10rem ;
+    margin: 10rem;
     padding-bottom: 5px;
     display: flex;
     flex-direction: row;
     position: absolute;
     inset: 0;
     margin: auto;
-    border-radius: 2px;
+    border-radius: 7px;
     box-shadow: 0 5px 15px rgba(0,0,0,.35);
 }
-.productDetail-conatiner img {
+.img-container{
+    width: 45%;
+}
+.img-container img {
     width: 177px;
     height: 281px;
     padding: 10px;
-    padding-top: 19px;
     cursor: pointer;
 }
 
@@ -37,7 +38,14 @@
 }
 
 .rating{
-    margin-top: -9px;
+    border: 2px solid #d9d3d3;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.5rem;
 }
 .rating span:nth-child(2){
    color: yellow;
@@ -66,7 +74,7 @@
     gap: 5px;
 }
 
-.author span:nth-child(2) {
+.author-detail span:nth-child(2) {
     padding-left:15px;
   }
 .category span:nth-child(2) {
@@ -79,17 +87,53 @@
     padding-left:15px;   
   }
 
-  .add-button button{
-    width: 200px;
+  .add-button-detail{
+    display: inline-block;
+    width: 100%;
+  }
+  .add-button-detail button{
+    width: 100%;
     background-color:rgb(54, 116, 170);
     border: 0.5px solid blue;
     border-radius: 4px ;
     cursor: pointer; 
+    padding: 0.2rem;
+
+}
+.wishlist-button-detail{
+    display: inline-block;
+    width: 100%;
 }
   .wishlists-button {
-    width: 200px;
+    width: 100%;
     background-color:rgb(54, 116, 170);
     border: 0.5px solid blue;
     border-radius: 4px ;
     cursor: pointer; 
+    padding: 0.2rem;
+}
+
+@media screen and (max-width : 756px) {
+    .productDetail-conatiner {
+        width: 236px;
+        height: 534px;
+        flex-direction: column;
+        position: relative;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .img-container{
+        width: 100%;
+    }
+
+    .img-container img {
+        width: 189px;
+        height: 225px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .detail-block {
+        margin-left: 0px; 
+    }
 }

@@ -39,10 +39,8 @@ export default function Home() {
                     </div>
                 </div>
                 <div className='footer'>
-                    <div className='footer-heading'>
-                        <h2> &#169; Manga Mania </h2>
-                    </div>
                     <div className='icon'>
+                        <h2> &#169; Manga Mania </h2>
                         <a href='https://github.com/RaviYadav3003' target='_blank'><i class="fa fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/ravi-yadav-294862252/" target='_blank'><i class="fa fa-linkedin"></i></a>
                     </div>

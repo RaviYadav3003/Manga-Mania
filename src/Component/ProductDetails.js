@@ -12,11 +12,11 @@ export const ProductDetail = () => {
         return products?.find(({ id }) => id === productId)
     }
     const productDetail = getProductDetail(productId, products)
-    console.log(productDetail);
+
     return (
         <>
             {productDetail && <div className='productDetail-conatiner'>
-                <div>
+                <div className='img-container'>
                     {<img src={productDetail?.img} alt="productImage" />}
                 </div>
                 <div className='detail-block'>
@@ -33,9 +33,8 @@ export const ProductDetail = () => {
                         <span className='originalprice'>₹{productDetail?.originalPrice}</span>
                         <span className='discount'>{productDetail?.discount}%OFF</span>
                     </div>
-                    <hr />
                     <div className='all-detail'>
-                        <div className='author'>
+                        <div className='author-detail'>
                             <span style={{ fontWeight: "bolder" }}>Author:</span>
                             <span>{productDetail?.author}</span>
                         </div>
@@ -52,7 +51,7 @@ export const ProductDetail = () => {
                             <span>{productDetail.deliveryTime}</span>
                         </div>
                     </div>
-                    <div className="add-button" >
+                    <div className="add-button-detail" >
                         {cart?.some((data) => data.id === productDetail.id) ? (
                             <NavLink to="/cart">
                                 <button style={{ backgroundColor: "white" }}>Go to Cart</button>
@@ -61,9 +60,9 @@ export const ProductDetail = () => {
                             add to cart
                         </button>}
                     </div>
-                    <div >
+                    <div className='wishlist-button-detail'>
                         {wishlist?.some((data) => data.id === productDetail.id) ? (
-                            <button className="wishlists-button" style={{ backgroundColor: "white" }} onClick={() => removeFromWhislist(productDetail)}>Added to wishlist</button>
+                            <button className="wishlists-button" style={{ backgroundColor: "white" }} onClick={() => removeFromWhislist(productDetail)}>remove from wishlist</button>
                         ) : <button className="wishlists-button" onClick={() => handleAddToWishlist(productDetail)}>Add to wishlist</button>}
                     </div>
                 </div>

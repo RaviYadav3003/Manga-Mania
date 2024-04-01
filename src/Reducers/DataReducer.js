@@ -43,12 +43,22 @@ export const dataReducer = (state, action) => {
             }
         case "ADD_TO_CART":
             return {
-                ...state, cart: [...state.cart, action.payload],
+                ...state, cart: [...state.cart, { ...action.payload, quantity: 1 }],
             }
         case "PRICE_BY_RANGE":
             return {
                 ...state, filters: { ...state.filters, price: action.payload }
             }
+        case "INCREASE_QUANTITY":
+            return {
+                ...state,
+                cart: state.cart.map(item => item.id === action.payload ? { ...item, quantity: item.quantity + 1 } : item)
+            };
+        case "DECREASE_QUANTITY":
+            return {
+                ...state,
+                cart: state.cart.map(item => item.id === action.payload ? { ...item, quantity: Math.max(item.quantity - 1, 0) } : item)
+            };
         case "FILTER_BY_CATEGORIES":
             return {
                 ...state, filters: { ...state.filters, selectedCategories: state.filters.selectedCategories.includes(action.payload) ? state.filters.selectedCategories.filter((category) => category !== action.payload) : [...state.filters.selectedCategories, action.payload], }
@@ -66,7 +76,7 @@ export const dataReducer = (state, action) => {
                     sort: null,
                     selectedCategories: [],
                     rating: null,
-                    price: null,
+                    price: 600,
                 }
             }
         default:

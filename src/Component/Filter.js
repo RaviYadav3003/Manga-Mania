@@ -5,46 +5,46 @@ import "./filter.css"
 
 export const Filter = () => {
     const { state } = useContext(DataContext)
-    const [priceRange, setPriceRange] = useState(0)
 
     const { dispatch, state: { filters: { sort,
         selectedCategories,
         rating,
+        price
     } } } = useContext(DataContext)
 
 
 
     const handleRangeFilter = (e) => {
-        setPriceRange(Number(e.target.value))
-        dispatch({ type: "PRICE_BY_RANGE", payload: e.target.value })
+        dispatch({ type: "PRICE_BY_RANGE", payload: Number(e.target.value) })
     }
 
     const handleStarRating = (value) => {
         dispatch({ type: "STAR_RATING_FILTER", payload: value })
     }
+
     return (
         <>
-            <div className='filter-container'>
+            <div className='filter-container-show'>
                 <div className="filter-header">
-                    <h4>Filter</h4>
+                    <h3>Filter</h3>
                     <button onClick={() => dispatch({ type: "CLEAR_FILTER_ALL" })}>clear</button>
                 </div>
                 <div className="filter-range">
-                    <h4>price</h4>
-                    <div className="filter-price-num">
-                        <span style={{ fontSize: priceRange === 200 ? "large" : "" }}>200</span>
-                        <span style={{ fontSize: priceRange === 400 ? "large" : "" }}>400</span>
-                        <span style={{ fontSize: priceRange === 600 ? "large" : "" }}>600</span>
-                        <span style={{ fontSize: priceRange === 800 ? "large" : "" }}>800</span>
+                    <h3>price</h3>
+                    <div className="filter-price-num font-large">
+                        <span style={{ fontSize: price === 200 ? "x-large" : "" }}>200</span>
+                        <span style={{ fontSize: price === 400 ? "x-large" : "" }}>400</span>
+                        <span style={{ fontSize: price === 600 ? "x-large" : "" }}>600</span>
+                        <span style={{ fontSize: price === 800 ? "x-large" : "" }}>800</span>
                     </div>
-                    <div className="filter-range-input">
-                        <input type="range" min="200" max="800" onChange={handleRangeFilter} value={priceRange} step={200} />
+                    <div className="filter-range-input font-large">
+                        <input type="range" min="200" max="800" onChange={handleRangeFilter} value={price} step={200} />
                     </div>
                 </div>
 
                 <div className="filter-category">
-                    <h4>Category</h4>
-                    <div>
+                    <h3>Category</h3>
+                    <div className='category-list font-large'>
                         {state?.categories?.map(({ id, categoryName }) => {
                             return <div className='categorys'>
                                 <label htmlFor={id}>
@@ -56,9 +56,9 @@ export const Filter = () => {
                     </div>
                 </div>
 
-                <div className="filter-rating">
-                    <h4>Rating</h4>
-                    <div>
+                <div className="filter-rating ">
+                    <h3>Rating</h3>
+                    <div className='font-large'>
                         {[1, 2, 3, 4, 5].map((num) => {
                             return <div><label key={num}>
                                 <input type="radio" name="rating" value={num} onChange={() => handleStarRating(num)} checked={rating === num} /> <span>{num} Star & above</span>
@@ -69,9 +69,9 @@ export const Filter = () => {
                     </div>
                 </div>
 
-                <div>
-                    <h4>Sort by</h4>
-                    <div className='short-by'>
+                <div className='filter-rating'>
+                    <h3>Sort by</h3>
+                    <div className='short-by font-large'>
                         <label htmlFor="price-low">
                             <input type="radio" id="price-low" name="short" onChange={() => { dispatch({ type: "SORT_BY_PRICE", payload: "LOW-TO-HIGH" }) }} checked={sort === "LOW-TO-HIGH"} /> <span>Price - Low to High</span>
                         </label>

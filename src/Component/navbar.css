@@ -1,51 +1,81 @@
-    *{
-        text-decoration: none;
-    }
-    
-    a{
-        color: white;
+ * {
+    text-decoration: none;
+}
+
+a {
+    color: white;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-grow: 10;
+    padding: 20px;
+    background-color: #2d3480;
+    position: sticky;
+    top: 0px;
+    gap: 2rem;
+    z-index: 1;
+}
+
+.nav-name {
+    font-weight: 600;
+    font-size: larger;
+    color: aqua;
+}
+
+.nav-search {
+    border: 1px solid black;
+    align-items: center;
+    display: flex;
+    border-radius: 18px;
+    background-color: white;
+    padding: o.2rem;
+}
+
+.nav-search input {
+    margin: 0;
+    width: 400px; 
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.nav-search i {
+    font-size: 15px;
+}
+
+.inputSearch {
+    padding: 1px 2px;
+}
+
+.header-profile nav{
+    display: flex;
+    gap: 1rem;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .nav-search input {
+        width: 226px; 
     }
 
-    .navbar-container{
-        display: flex;
-       flex-direction: row;
-       justify-content: space-around;
-        flex-grow: 10;
-        padding: 20px;
-        background-color: rgb(54, 116, 170);
-        position: sticky;
-        top : 0px;
-        gap: 2rem;
-        z-index: 1;
-    }
 
-    .nav-name {
-        font-weight: 600;
-        font-size: larger;
-        color: aqua;
+}
+
+@media only screen and (max-width: 576px) {
+    .navbar-container {
+        flex-direction: column; 
+        padding: 10px; 
+        gap : 1rem;
+        align-items: center;
+    }
+    .nav-search{
+        padding: 0.2rem;
     }
 
     .nav-search input {
-        margin: 0;
-    width: 378px;
-    border: none;
-    outline: none;    
+        width: 200px;
     }
-
-    .nav-search {
-        border: 1px solid black;
-        align-items: center;
-        display: flex;
-        border-radius: 6px;
-        background-color: white;
-    }
-
-    .nav-search i {
-        font-size: 15   px;
-    }
-
-    .inputSearch {
-        padding: 1px 2px;
-    }
-
-    
+}

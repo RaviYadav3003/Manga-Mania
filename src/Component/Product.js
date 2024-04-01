@@ -1,12 +1,14 @@
-import React, { useContext, } from "react"
+import React, { useContext, useState, } from "react"
 import { DataContext } from "../index"
 import "./product.css"
 import { NavLink, useNavigate } from "react-router-dom"
 import { Filter } from "./Filter"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import FilterModal from "./FilterModal"
 
 export const Product = () => {
+   const [isShowFilter, setIsShowFilter] = useState(false)
    const { state: { products, filters, cart, wishlist }, handleAddToCart, handleAddToWishlist, removeFromWhislist } = useContext(DataContext)
 
    const navigate = useNavigate()
@@ -44,43 +46,52 @@ export const Product = () => {
          <div className="filter-container">
             <Filter />
          </div>
-         <div className="product-listing">
-            {renderData()?.map((product) => {
-               const { id, title, author, price, img, originalPrice, discount } = product
-               return <div key={id} className="product-container"  >
-                  <img src={img} alt="Books will render" onClick={() => navigate(`/product/${id}`)} style={{ cursor: "pointer" }} />
-                  <div>
-                     {wishlist?.some((data) => data.id === id) ? (
-                        <span className="wishlist-button"
-                           onClick={() => removeFromWhislist(product)}> <i class="fa fa-heart" style={{ color: "red" }}></i></span>
-                     ) : <span className="wishlist-button"
-                        onClick={() => handleAddToWishlist(product)}><i className="fa fa-heart" aria-hidden="true"></i></span>}
+         <div className="product-header" >
+            <div className="product-title" >
+               <h3>Showing all products</h3>
+               <div className="filter-icon" onClick={() => setIsShowFilter(true)} ><span class="material-symbols-outlined">
+                  filter_alt
+               </span></div>
+            </div>
+            <div className="product-listing">
+               {renderData()?.map((product) => {
+                  const { id, title, author, price, img, originalPrice, discount } = product
+                  return <div key={id} className="product-container"  >
+                     <img src={img} alt="Books will render" onClick={() => navigate(`/product/${id}`)} style={{ cursor: "pointer" }} />
+                     <div>
+                        {wishlist?.some((data) => data.id === id) ? (
+                           <span className="wishlist-button"
+                              onClick={() => removeFromWhislist(product)}> <i class="fa fa-heart" style={{ color: "red" }}></i></span>
+                        ) : <span className="wishlist-button"
+                           onClick={() => handleAddToWishlist(product)}><i className="fa fa-heart" aria-hidden="true"></i></span>}
+                     </div>
+                     <div className="content-side">
+                        <div className="title-name">
+                           <span><b>{title}</b></span>
+                        </div>
+                        <div className="author">
+                           <span >{author} </span>
+                        </div>
+                        <div className="price-block">
+                           <span>₹{price}</span>
+                           <span>₹{originalPrice}</span>
+                           <span>({discount}%OFF)</span>
+                        </div>
+                        <div className="add-button" >
+                           {cart?.some((data) => data.id === id) ? (
+                              <NavLink to="/cart">
+                                 <button style={{ backgroundColor: "white" }}>Go to Cart</button>
+                              </NavLink>
+                           ) : <button onClick={() => handleAddToCart(product)}>
+                              add to cart
+                           </button>}
+                        </div>
+                     </div>
                   </div>
-                  <div className="content-side">
-                     <div className="title-name">
-                        <span><b>{title}</b></span>
-                     </div>
-                     <div className="author">
-                        <span style={{ fontSize: "13px" }}>{author} </span>
-                     </div>
-                     <div className="price-block">
-                        <span>₹{price}</span>
-                        <span>₹{originalPrice}</span>
-                        <span>({discount}%OFF)</span>
-                     </div>
-                     <div className="add-button" >
-                        {cart?.some((data) => data.id === id) ? (
-                           <NavLink to="/cart">
-                              <button style={{ backgroundColor: "white" }}>Go to Cart</button>
-                           </NavLink>
-                        ) : <button onClick={() => handleAddToCart(product)}>
-                           add to cart
-                        </button>}
-                     </div>
-                  </div>
-               </div>
-            })}
+               })}
+            </div>
          </div>
+         {isShowFilter && <FilterModal setIsShowFilter={setIsShowFilter} />}
       </div>
       <ToastContainer />
    </>

@@ -6,10 +6,10 @@ import { DataContext } from '../Context/DataContext';
 import "./login.css"
 
 export const Login = () => {
-    const { isLoggedIn, setIsLoggedIn, } = useContext(DataContext)
+    const { setIsLoggedIn, } = useContext(DataContext)
     const [userdata, setuserdata] = useState({ email: "", password: "" });
-    const { state, login } = useContext(AuthContext);
-    console.log(state);
+    const { login } = useContext(AuthContext);
+
     const navigate = useNavigate();
     const location = useLocation()
 
