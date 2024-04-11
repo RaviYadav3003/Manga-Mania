@@ -16,7 +16,6 @@ export const products = [
     rating: 5,
     price: 250,
     originalPrice: 399,
-    discount: 23,
     deliveryTime: "2-4 business days",
     ratings: 4.6,
   },
@@ -30,7 +29,6 @@ export const products = [
     rating: 4.0,
     price: 275,
     originalPrice: 350,
-    discount: 25,
     deliveryTime: "2-4 business days",
     ratings: 4.6,
   },
@@ -44,7 +42,6 @@ export const products = [
     rating: 5,
     price: 200,
     originalPrice: 399,
-    discount: 30,
     deliveryTime: "2-4 business days",
     ratings: 4.6,
   },
@@ -58,7 +55,6 @@ export const products = [
     rating: 3.9,
     price: 650,
     originalPrice: 999,
-    discount: 27,
     deliveryTime: "2-4 business days",
     ratings: 4.6
   },
@@ -72,7 +68,6 @@ export const products = [
     rating: 2.5,
     price: 599,
     originalPrice: 899,
-    discount: 22,
     deliveryTime: "2-4 business days",
     ratings: 4.6
   },
@@ -86,7 +81,6 @@ export const products = [
     rating: 4.1,
     price: 425,
     originalPrice: 799,
-    discount: 22,
     deliveryTime: "2-4 business days",
     ratings: 4.6
   },
@@ -100,7 +94,6 @@ export const products = [
     rating: 3.2,
     price: 200,
     originalPrice: 499,
-    discount: 26,
     deliveryTime: "2-4 business days",
     ratings: 4.6,
   },
@@ -114,7 +107,6 @@ export const products = [
     rating: 3.7,
     price: 250,
     originalPrice: 399,
-    discount: 32,
     deliveryTime: "2-4 business days",
     ratings: 4.6,
   },
@@ -128,7 +120,6 @@ export const products = [
     rating: 3.4,
     price: 300,
     originalPrice: 599,
-    discount: 19,
     deliveryTime: "2-4 business days",
     ratings: 4.6,
   },
@@ -142,7 +133,6 @@ export const products = [
     rating: 4.3,
     price: 500,
     originalPrice: 899,
-    discount: 33,
     deliveryTime: "2-4 business days",
     ratings: 4.6
   }, {
@@ -155,7 +145,6 @@ export const products = [
     rating: 5,
     price: 280,
     originalPrice: 449,
-    discount: 37,
     deliveryTime: "2-4 business days",
     ratings: 4.7
   },
@@ -169,7 +158,6 @@ export const products = [
     rating: 4.3,
     price: 275,
     originalPrice: 399,
-    discount: 31,
     deliveryTime: "2-4 business days",
     ratings: 4.7
   },
@@ -183,7 +171,6 @@ export const products = [
     rating: 5,
     price: 300,
     originalPrice: 499,
-    discount: 40,
     deliveryTime: "2-4 business days",
     ratings: 4.7
   },
@@ -197,7 +184,6 @@ export const products = [
     rating: 5,
     price: 275,
     originalPrice: 399,
-    discount: 31,
     deliveryTime: "2-4 business days",
     ratings: 4.7
   },
@@ -211,7 +197,6 @@ export const products = [
     rating: 4.1,
     price: 320,
     originalPrice: 499,
-    discount: 36,
     deliveryTime: "2-4 business days",
     ratings: 4.5
   },
@@ -225,7 +210,6 @@ export const products = [
     rating: 4.5,
     price: 280,
     originalPrice: 449,
-    discount: 37,
     deliveryTime: "2-4 business days",
     ratings: 4.7
   },
@@ -239,7 +223,6 @@ export const products = [
     rating: 5,
     price: 300,
     originalPrice: 449,
-    discount: 33,
     deliveryTime: "2-4 business days",
     ratings: 4.8
   },
@@ -253,7 +236,6 @@ export const products = [
     rating: 5,
     price: 320,
     originalPrice: 499,
-    discount: 36,
     deliveryTime: "2-4 business days",
     ratings: 4.5
   },
@@ -267,7 +249,6 @@ export const products = [
     rating: 4.6,
     price: 300,
     originalPrice: 499,
-    discount: 40,
     deliveryTime: "2-4 business days",
     ratings: 4.7
   },
@@ -281,7 +262,6 @@ export const products = [
     rating: 4.2,
     price: 320,
     originalPrice: 499,
-    discount: 36,
     deliveryTime: "2-4 business days",
     ratings: 4.5
   },
@@ -295,7 +275,6 @@ export const products = [
     rating: 4.5,
     price: 280,
     originalPrice: 399,
-    discount: 30,
     deliveryTime: "2-4 business days",
     ratings: 4.6
   },
@@ -309,7 +288,6 @@ export const products = [
     rating: 4.4,
     price: 275,
     originalPrice: 399,
-    discount: 31,
     deliveryTime: "2-4 business days",
     ratings: 4.7
   },
@@ -323,7 +301,6 @@ export const products = [
     rating: 4.7,
     price: 300,
     originalPrice: 499,
-    discount: 40,
     deliveryTime: "2-4 business days",
     ratings: 4.8
   }

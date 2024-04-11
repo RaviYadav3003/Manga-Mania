@@ -1,16 +1,16 @@
-import React, { useContext, useState, } from 'react'
-import { DataContext } from '../Context/DataContext'
+import React from 'react'
+import { useData } from '../../Context/DataContext'
 import "./filter.css"
 
 
 export const Filter = () => {
-    const { state } = useContext(DataContext)
+    const { state } = useData()
 
     const { dispatch, state: { filters: { sort,
         selectedCategories,
         rating,
         price
-    } } } = useContext(DataContext)
+    } } } = useData()
 
 
 

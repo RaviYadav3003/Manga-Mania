@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from "react"
+import React from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import "./navbar.css"
-import { DataContext } from "../Context/DataContext"
-import { AuthContext } from "../Context/AuthContext"
+import { useData } from "../../Context/DataContext"
 import { toast } from "react-toastify"
 
 export const Navbar = () => {
-    const { state: { cart, wishlist }, dispatch, isLoggedIn, setIsLoggedIn } = useContext(DataContext)
+    const { state: { cart, wishlist }, dispatch, isLoggedIn, setIsLoggedIn } = useData()
 
     const navigate = useNavigate()
 

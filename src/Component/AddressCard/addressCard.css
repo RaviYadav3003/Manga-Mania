@@ -1,0 +1,74 @@
+.address__card__container {
+    width: max-content;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 10px lightgray;
+    width: 300px;
+    color: #3a1f1f;
+    background-color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .address__card__container > p {
+    color: #7d7d7d;
+  }
+  
+  .address__label {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .address__details{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+ }
+  .address__details > p, h3{
+     margin: 0px;
+  }
+
+  .btns__container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .update__btn,
+  .remove__btn {
+    cursor: pointer;
+    border: none;
+    padding: 0.2rem 0.8rem;
+    box-shadow: 0px 0px 10px lightgray;
+    border-radius: 0.4rem;
+  }
+  
+  .update__btn {
+    color: white;
+    background-color: #007bff;;
+  }
+  
+  .remove__btn {
+    color: white;
+    background-color: #3a1f1f;;
+  }
+  
+  .update__btn:hover {
+    color:#007bff;
+    background-color: white;
+    outline: 2px solid #007bff;
+    transition: 0.15s ease-in;
+  }
+  
+  .remove__btn:hover {
+    color: #3a1f1f;
+    background-color: white;
+    outline: 2px solid #3a1f1f;
+    transition: 0.15s ease-in;
+  }
+  
+  @media only screen and (max-width: 425px) {
+    .address__card__container {
+        width: 250px;
+    }
+  }

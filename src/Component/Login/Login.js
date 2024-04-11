@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Context/AuthContext';
-import { DataContext } from '../Context/DataContext';
+import { AuthContext } from '../../Context/AuthContext';
+import { useData } from '../../Context/DataContext';
 import "./login.css"
 
 export const Login = () => {
-    const { setIsLoggedIn, } = useContext(DataContext)
+    const { setIsLoggedIn, } = useData()
     const [userdata, setuserdata] = useState({ email: "", password: "" });
     const { login } = useContext(AuthContext);
 
@@ -27,7 +27,7 @@ export const Login = () => {
                 if (users[i].email == userdata.email && users[i].password == userdata.password) {
                     flag = true
                     login(users[i]);
-                    toast("login successfull");
+                    toast.success("login successfull");
                     setuserdata({ email: "", password: "" })
                     setIsLoggedIn(true)
                     navigate(location?.state?.from?.pathname)
@@ -36,18 +36,18 @@ export const Login = () => {
             }
 
             if (flag == false) {
-                toast("Your email or password is incorrect");
+                toast.error("Your email or password is incorrect");
             }
         }
         else {
-            toast("Please fill all details");
+            toast.warn("Please fill all details");
         }
     }
 
     const guestLogin = () => {
         setuserdata({ email: "testuser", password: "123" })
         setIsLoggedIn(true)
-        toast("guest login successfully");
+        toast.success("guest login successfully");
         navigate(location?.state?.from?.pathname)
     }
     return (

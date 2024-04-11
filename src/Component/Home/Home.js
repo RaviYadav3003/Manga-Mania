@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import "./home.css"
 import { Link, useNavigate } from 'react-router-dom'
-import { DataContext } from '../Context/DataContext'
+import { useData } from '../../Context/DataContext'
 export default function Home() {
-    const { state, dispatch } = useContext(DataContext)
+    const { state, dispatch } = useData()
     const navigate = useNavigate();
     const handleCategoryClick = (categoryName) => {
         navigate("/product")

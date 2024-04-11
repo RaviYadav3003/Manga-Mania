@@ -116,7 +116,7 @@
 @media screen and (max-width : 756px) {
     .productDetail-conatiner {
         width: 236px;
-        height: 534px;
+        height: 543px;
         flex-direction: column;
         position: relative;
         margin-top: 1rem;

@@ -1,17 +1,19 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { NavLink, useParams } from 'react-router-dom'
-import { DataContext } from '../Context/DataContext'
+import { useData } from '../../Context/DataContext'
 import "./productDetail.css"
 import { ToastContainer } from 'react-toastify'
 
 export const ProductDetail = () => {
-    const { state: { products, cart, wishlist }, handleAddToCart, handleAddToWishlist, removeFromWhislist } = useContext(DataContext)
+    const { state: { products, cart, wishlist }, handleAddToCart, handleAddToWishlist, removeFromWhislist } = useData()
     const { productId } = useParams()
 
     const getProductDetail = (productId, products) => {
         return products?.find(({ id }) => id === productId)
     }
     const productDetail = getProductDetail(productId, products)
+
+    const discount = Math.round(((productDetail.originalPrice - productDetail.price) / productDetail.originalPrice) * 100)
 
     return (
         <>
@@ -31,7 +33,7 @@ export const ProductDetail = () => {
                     <div className='price-detail'>
                         <span className='price'>₹{productDetail?.price}</span>
                         <span className='originalprice'>₹{productDetail?.originalPrice}</span>
-                        <span className='discount'>{productDetail?.discount}%OFF</span>
+                        <span className='discount'>{discount}%OFF</span>
                     </div>
                     <div className='all-detail'>
                         <div className='author-detail'>

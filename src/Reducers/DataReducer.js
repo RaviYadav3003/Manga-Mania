@@ -12,6 +12,8 @@ export const initialState = {
     products: [],
     cart: [],
     wishlist: [],
+    addresses: [],
+    selectedAddress: null,
 };
 
 export const dataReducer = (state, action) => {
@@ -69,6 +71,8 @@ export const dataReducer = (state, action) => {
 
         case "SORT_BY_PRICE":
             return { ...state, filters: { ...state.filters, sort: action.payload } }
+            case "CLEAR_CART":
+      return { ...state, cart: action.payload };
         case "CLEAR_FILTER_ALL":
             return {
                 ...state, filters: {
@@ -79,6 +83,34 @@ export const dataReducer = (state, action) => {
                     price: 600,
                 }
             }
+
+        case "SET_DEFAULT_ADDRESS":
+            return { ...state, addresses: [action.payload] };
+        case "ADD_ADDRESS":
+            return { ...state, addresses: [...state.addresses, action.payload] };
+        case "DELETE_ADDRESS": {
+            const deletedAddress = action.payload;
+
+            const newAddresses = state.addresses.filter(
+                ({ id }) => id !== deletedAddress.id
+            );
+
+            return { ...state, addresses: newAddresses };
+        }
+        case "UPDATE_ADDRESS": {
+            const updatedAddress = action.payload;
+
+            const newAddresses = state.addresses.map((address) => {
+                if (address.id === updatedAddress.id) {
+                    address = { ...updatedAddress };
+                }
+                return address;
+            });
+
+            return { ...state, addresses: newAddresses };
+        }
+        case "SET_SELECTED_ADDRESS":
+            return { ...state, selectedAddress: action.payload };
         default:
             return state
     }

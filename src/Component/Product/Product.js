@@ -1,15 +1,15 @@
-import React, { useContext, useState, } from "react"
-import { DataContext } from "../index"
+import React, { useState, } from "react"
 import "./product.css"
 import { NavLink, useNavigate } from "react-router-dom"
-import { Filter } from "./Filter"
+import { Filter } from "../Filter/Filter"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
-import FilterModal from "./FilterModal"
+import FilterModal from "../FilterModel/FilterModal"
+import { useData } from "../../Context/DataContext"
 
 export const Product = () => {
    const [isShowFilter, setIsShowFilter] = useState(false)
-   const { state: { products, filters, cart, wishlist }, handleAddToCart, handleAddToWishlist, removeFromWhislist } = useContext(DataContext)
+   const { state: { products, filters, cart, wishlist }, handleAddToCart, handleAddToWishlist, removeFromWhislist } = useData()
 
    const navigate = useNavigate()
    const {
@@ -55,7 +55,8 @@ export const Product = () => {
             </div>
             <div className="product-listing">
                {renderData()?.map((product) => {
-                  const { id, title, author, price, img, originalPrice, discount } = product
+                  const { id, title, author, price, img, originalPrice, } = product
+                  const discount = Math.round(((originalPrice - price) / originalPrice) * 100)
                   return <div key={id} className="product-container"  >
                      <img src={img} alt="Books will render" onClick={() => navigate(`/product/${id}`)} style={{ cursor: "pointer" }} />
                      <div>

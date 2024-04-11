@@ -72,8 +72,13 @@ padding-right: 5px;
 .price-block span:nth-child(3){
     color: darkgreen;
 }
+
+.add-button{
+    display: block;
+    width: 100%;
+}
 .add-button button {
-    width: 225px;
+    width: 100%;
     background-color: rgb(54, 116, 170);
     border: 0.5px solid blue;
     border-radius: 4px;
@@ -123,10 +128,6 @@ margin-top: -188px;
         height: 18rem;
     }
     
-    .add-button button {
-        width: 198px;
-       
-    }
     .wishlist-button {
        
         padding-left: 180px;
@@ -173,7 +174,5 @@ margin-top: -188px;
     .wishlist-button i {
         font-size: 1.1rem;
     }
-    .add-button button {
-        width: 155px;
-    }
+    
 }

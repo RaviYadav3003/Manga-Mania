@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './signUp.css'
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import { DataContext } from '../Context/DataContext';
 
 export const SignUp = () => {
   const [userData, setUserData] = useState({ name: "", email: "", password: "" });
@@ -22,11 +21,11 @@ export const SignUp = () => {
       }
       userArray.push(userObj);
       localStorage.setItem("Users", JSON.stringify(userArray));
-      toast("Registration Successfull");
+      toast.success("Registration Successfull");
       navigate("/login")
     }
     else {
-      toast("please fill all data");
+      toast.info("please fill all data");
     }
   }
 

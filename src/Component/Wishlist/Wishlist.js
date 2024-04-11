@@ -1,15 +1,16 @@
-import React, { useContext } from 'react'
-import { DataContext } from '../Context/DataContext'
+import React from 'react'
+import { useData } from '../../Context/DataContext'
 import "./wishlist.css"
 import { NavLink } from 'react-router-dom'
 import { ToastContainer, } from 'react-toastify'
 export default function Wishlist() {
-  const { state: { wishlist, cart }, handleAddToCart, removeFromWhislist } = useContext(DataContext)
+  const { state: { wishlist, cart }, handleAddToCart, removeFromWhislist } = useData()
   return (
     <>
       {wishlist.length === 0 && <h1>Your Wishlist is empty!</h1>}
-      <div>{wishlist?.map((item) => {
-        const { id, title, author, price, img, originalPrice, discount } = item
+      <div className='wishlist-page'>{wishlist?.map((item) => {
+        const { id, title, author, price, img, originalPrice, } = item
+        const discount = Math.round(((originalPrice - price) / originalPrice) * 100)
         return <>
           <div className='wishlist-conatiner'>
             <div>
