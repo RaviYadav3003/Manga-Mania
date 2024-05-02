@@ -2,6 +2,7 @@ import React from 'react'
 import { Filter } from '../Filter/Filter';
 import "./filterModal.css"
 function FilterModal({ setIsShowFilter }) {
+
     return (
         <section
             className="filters-modal-container"

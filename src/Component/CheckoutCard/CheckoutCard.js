@@ -8,8 +8,6 @@ export const CheckoutCard = () => {
     const { state: { cart }, originalValue, totalValue } = useData();
     const navigate = useNavigate()
 
-
-
     const handleCheckout = () => {
         if (cart.length === 0) {
             toast("Cart is Empty!")

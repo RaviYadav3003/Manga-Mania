@@ -29,7 +29,7 @@ export default function Wishlist() {
               <div className="add-button" >
                 {cart?.some((data) => data.id === id) ? (
                   <NavLink to="/cart">
-                    <button style={{ backgroundColor: "white" }}>Go to Cart</button>
+                    <button style={{ backgroundColor: "white", color: "black" }}>Go to Cart</button>
                   </NavLink>
                 ) : <button onClick={() => handleAddToCart(item)}>
                   add to cart

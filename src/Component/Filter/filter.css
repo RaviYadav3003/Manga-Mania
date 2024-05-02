@@ -10,11 +10,9 @@
     width: 100%;
 }
 
-.filter-header button {
+.filter-header span {
     cursor: pointer;
-    padding: 7px;
-    height: 30px;
-    border-radius: 8px;
+    text-decoration: underline;
 }
 .filter-header button:hover {
     background-color: rgb(100, 115, 129);   
@@ -36,6 +34,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap:1rem;
+    padding-left: 1rem;
 }
 .filter-category{
 display: flex;
@@ -57,3 +56,8 @@ align-items: flex-start;
     flex-direction: column;
 }
 
+@media only screen and (max-width:768px){
+    .filter-container-show{
+        padding-left: 0px;
+    }
+}

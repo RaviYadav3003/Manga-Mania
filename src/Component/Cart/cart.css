@@ -77,10 +77,10 @@
     transition: background-color 0.3s ease; 
     padding: 4px 10px;
     border-radius: 6px;
-
+    font-weight: bold;
 }
 .remove-button button:hover  {
-    background-color: #12477f; 
+    background-color: #0056b3;
   }
 
 .quantity-control{   

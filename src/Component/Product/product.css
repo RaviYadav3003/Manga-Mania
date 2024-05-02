@@ -79,14 +79,18 @@ padding-right: 5px;
 }
 .add-button button {
     width: 100%;
-    background-color: rgb(54, 116, 170);
+    background-color: #007bff;
     border: 0.5px solid blue;
     border-radius: 4px;
     cursor: pointer;
     padding: 0.2rem;
     margin-top: 0.5rem;
+    font-weight: bold;
+    color: #ffff;
 }
-
+.add-button button:hover{
+    background-color: #0056b3;
+}
 .wishlist-button{ 
 color: grey;
 cursor: pointer;
@@ -115,6 +119,12 @@ margin-top: -188px;
     box-shadow: 0 0 5px #9db2bf;;
 }
 
+
+@media screen and (max-width : 1024px) {
+    .filter-container{
+        width: 30%;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     .filter-container{

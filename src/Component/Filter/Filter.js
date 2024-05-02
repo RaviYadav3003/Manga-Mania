@@ -25,7 +25,7 @@ export const Filter = () => {
             <div className='filter-container-show'>
                 <div className="filter-header">
                     <h3>Filter</h3>
-                    <button onClick={() => dispatch({ type: "CLEAR_FILTER_ALL" })}>clear</button>
+                    <span onClick={() => dispatch({ type: "CLEAR_FILTER_ALL" })}>clear</span>
                 </div>
                 <div className="filter-range">
                     <h3>price</h3>
