@@ -65,3 +65,18 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+    .loginpage{
+        width : 40%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .loginpage{
+        width : 50%;
+    }
+}
+@media screen and (max-width: 426px) {
+    .loginpage{
+        width : 70%;
+    }
+}

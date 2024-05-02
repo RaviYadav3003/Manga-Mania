@@ -1,24 +1,18 @@
 import { ToastContainer, toast } from "react-toastify";
-// import { useCart } from "../../contexts/CartContext";
 import { useData } from "../../Context/DataContext";
 import "./orderDetailCard.css";
 import { useNavigate } from "react-router";
 
 export function OrderDetailsCard() {
     const navigate = useNavigate();
-    // const {
-    //     cart,
-    //     deliveryCharges,
-    //     totalPrice,
-    //     handleClearCart,
-    // } = useCart();
-    const { selectedAddress, setIsLoading, handleClearCart, state: { cart }, originalValue, totalValue } = useData();
+    const { selectedAddress, setIsLoading, handleWishlistCart, handleClearCart, state: { cart }, originalValue, totalValue } = useData();
     const { name, houseNo, city, state, country, zip } = selectedAddress ?? {};
 
     const handlePlaceOrder = () => {
         setIsLoading(true);
         setTimeout(() => {
             handleClearCart();
+            handleWishlistCart()
             toast.success("Order Placed Successfully!");
             setTimeout(() => {
                 navigate("/");

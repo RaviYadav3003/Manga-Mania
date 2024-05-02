@@ -6,7 +6,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem;
     height: 100%;
     width: 100%;
     color: var#3a1f1f;;
@@ -98,4 +97,19 @@
     color: white;
     background-color:#3a1f1f;
     border-radius: 0.4rem;
+  }
+
+  @media screen and (max-width : 450px) {
+    .address__btn__container {
+      align-self: center;
+      flex-direction: column;
+  }
+  
+  .add__address__btn {
+    margin-top: 0.5rem; 
+  }
+
+  .dummy__address__btn { 
+    margin-top: 0.5rem;
+  }
   }

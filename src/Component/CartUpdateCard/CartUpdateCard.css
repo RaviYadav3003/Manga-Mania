@@ -1,0 +1,100 @@
+.CartUpdated-listing  {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    padding-top: 2px;
+    display: flex;
+    padding-bottom: 1px;
+    z-index: 1;
+}
+
+.CartUpdated-listing img {
+    width: 184px;
+    height: 222px;
+}
+
+.CartUpdated-side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding-left: 0.7rem;
+}
+
+.CartUpdated-quantity{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.CartUpdated-quantity button {    
+    border: 1px solid blue;
+    border-radius: 50%;
+    color: blue;
+    font-size: large;   
+    padding: 0px;
+}
+
+.CartUpdated-wishlist-button {
+    
+    outline: 2px solid #007bff;
+    width: 100%;
+    padding: 0.3rem;
+    border-radius: 7px;
+    border: none;
+}
+.CartUpdated-wishlist{
+    width: 100%;
+}
+.CartUpdated-remove-button{
+    width: 100%;
+    border: 0.5px solid blue;
+    border-radius: 7px;
+}
+.CartUpdated-remove-button button{
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    width: 100%;
+    padding: 0.3rem;
+    border-radius: 7px;
+    border: none;
+}
+
+.CartUpdated-remove-button > button:hover {
+    color: #007bff;
+    background-color: white;
+    outline: 2px solid #007bff;
+    transition: 0.15s ease-in;
+}
+.CartUpdated-title{
+font-size: larger;
+}
+.CartUpdated-author{
+font-size: large;
+}
+.CartUpdated-price{
+font-size: large;
+}
+
+@media screen and (max-width : 600px) {
+    .CartUpdated-listing  {
+        flex-direction: column;
+    }
+    .CartUpdated-listing img {
+        width: 165px;
+        height: 196px;
+    }
+    .CartUpdated-side {
+        padding-left: 0px;
+    }
+    .CartUpdated-side {
+        gap: 0.5rem;
+    }
+}

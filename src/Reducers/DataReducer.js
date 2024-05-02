@@ -1,5 +1,3 @@
-
-
 export const initialState = {
     filters: {
         searchValue: null,
@@ -71,8 +69,10 @@ export const dataReducer = (state, action) => {
 
         case "SORT_BY_PRICE":
             return { ...state, filters: { ...state.filters, sort: action.payload } }
-            case "CLEAR_CART":
-      return { ...state, cart: action.payload };
+        case "CLEAR_CART":
+            return { ...state, cart: action.payload };
+        case "CLEAR_WISHLIST":
+            return { ...state, wishlist: action.payload };
         case "CLEAR_FILTER_ALL":
             return {
                 ...state, filters: {

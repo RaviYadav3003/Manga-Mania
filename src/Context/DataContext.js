@@ -66,6 +66,9 @@ export const DataProvider = ({ children }) => {
   const handleClearCart = () => {
     dispatch({ type: "CLEAR_CART", payload: [] });
   };
+  const handleWishlistCart = () => {
+    dispatch({ type: "CLEAR_WISHLIST", payload: [] });
+  };
   const originalValue = state.cart.reduce((acc, curr) => {
     return { ...acc, total: acc.total + (curr.originalPrice * curr.quantity) };
   }, { total: 0 });
@@ -75,7 +78,7 @@ export const DataProvider = ({ children }) => {
   }, { total: 0 });
   return (
     <div>
-      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist, setIsLoggedIn, isLoggedIn, decreaseQuantity, increaseQuantity, totalValue, originalValue, handleClearCart, setIsLoading, isLoading, addresses: state.addresses, selectedAddress: state.selectedAddress, }}>
+      <DataContext.Provider value={{ state, dispatch, handleAddToCart, handleAddToWishlist, handleRemoveCart, removeFromWhislist, setIsLoggedIn, isLoggedIn, decreaseQuantity, increaseQuantity, totalValue, originalValue, handleClearCart, handleWishlistCart, setIsLoading, isLoading, addresses: state.addresses, selectedAddress: state.selectedAddress, }}>
         {children}
       </DataContext.Provider>
 

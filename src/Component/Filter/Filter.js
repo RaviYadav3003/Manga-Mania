@@ -12,8 +12,6 @@ export const Filter = () => {
         price
     } } } = useData()
 
-
-
     const handleRangeFilter = (e) => {
         dispatch({ type: "PRICE_BY_RANGE", payload: Number(e.target.value) })
     }

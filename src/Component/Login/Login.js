@@ -30,7 +30,7 @@ export const Login = () => {
                     toast.success("login successfull");
                     setuserdata({ email: "", password: "" })
                     setIsLoggedIn(true)
-                    navigate(location?.state?.from?.pathname)
+                    navigate("/")
                     break;
                 }
             }
@@ -48,7 +48,7 @@ export const Login = () => {
         setuserdata({ email: "testuser", password: "123" })
         setIsLoggedIn(true)
         toast.success("guest login successfully");
-        navigate(location?.state?.from?.pathname)
+        navigate(location?.state?.from?.pathname ? location?.state?.from?.pathname : "/product")
     }
     return (
         <div className='register-body'>

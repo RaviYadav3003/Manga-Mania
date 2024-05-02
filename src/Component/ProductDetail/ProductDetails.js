@@ -13,10 +13,10 @@ export const ProductDetail = () => {
     }
     const productDetail = getProductDetail(productId, products)
 
-    const discount = Math.round(((productDetail.originalPrice - productDetail.price) / productDetail.originalPrice) * 100)
+    const discount = Math.round(((productDetail?.originalPrice - productDetail?.price) / productDetail?.originalPrice) * 100)
 
     return (
-        <>
+        <div className='productDetail'>
             {productDetail && <div className='productDetail-conatiner'>
                 <div className='img-container'>
                     {<img src={productDetail?.img} alt="productImage" />}
@@ -70,6 +70,6 @@ export const ProductDetail = () => {
                 </div>
                 <ToastContainer />
             </div>}
-        </>
+        </div>
     )
 }

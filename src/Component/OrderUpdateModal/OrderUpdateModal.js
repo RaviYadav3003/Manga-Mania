@@ -1,11 +1,10 @@
 import { Icon } from "@iconify/react";
 import { useData } from "../../Context/DataContext";
 import "./orderUpdateModal.css";
-// import { CartProductCard } from "../index";
-// import { useCart } from "../../contexts/CartContext";
+import { CartUpdateCard } from "../CartUpdateCard/CartUpdateCard";
 
 export function OrderUpdateModal({ setOrderUpdateModal }) {
-    const { cart } = useData();
+    const { state } = useData();
 
     return (
         <section
@@ -21,8 +20,8 @@ export function OrderUpdateModal({ setOrderUpdateModal }) {
                 <Icon icon="mingcute:close-fill" color="white" height={24} />
             </div>
             <div className="order__update__products__container">
-                {cart?.map((product) => {
-                    // return <CartProductCard key={product._id} product={product} />;
+                {state.cart?.map((product) => {
+                    return <CartUpdateCard key={product._id} product={product} />;
                 })}
             </div>
         </section>
